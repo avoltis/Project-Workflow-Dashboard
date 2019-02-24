@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { store } from './store';
-
+import { ConnnectedDashboard } from '../src/components/Dashboard';
 class App extends Component {
   render() {
-    console.log(store.getState());
 
-    return <div className="App">Hello World</div>;
+    return (
+      <React.Fragment>
+        <div className="App">Hello World</div>
+        <ConnnectedDashboard />
+      </React.Fragment>
+    );
   }
 }
 
