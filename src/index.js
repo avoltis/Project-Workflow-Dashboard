@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import { history } from './store/history';
 import { ConnectedNavigation } from './components/Navigation';
+import { ConnectTaskDetail } from './components/TaskDetail';
 
 ReactDOM.render(
   <Router history={history}>
@@ -13,6 +14,11 @@ ReactDOM.render(
       <ConnectedNavigation />
       <div>
         <Route exact path="/dashboard" render={() => <App />} />
+        <Route
+          exact
+          path="/task/:id"
+          render={({ match }) => <ConnectTaskDetail match={match} />}
+        />
       </div>
     </Provider>
   </Router>,
